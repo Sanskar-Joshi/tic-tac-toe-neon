@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Tic Tac Toe</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="background-overlay"></div>
+    <div class="container">
+      <h1 class="neon-text">Tic Tac Toe</h1>
+
+      <div class="mode-selection" id="modeSelection">
+        <h2>Select Mode</h2>
+        <div class="button-group">
+          <button class="btn btn-pvc" id="pvcBtn">
+            <i class="fas fa-robot"></i> VS Computer
+          </button>
+          <button class="btn btn-pvp" id="pvpBtn">
+            <i class="fas fa-user-friends"></i> VS Player
+          </button>
+        </div>
+      </div>
+
+      <div class="hidden" id="gameContainer">
+        <div class="game-info">
+          <div class="current-player" id="currentPlayer">Player X's Turn</div>
+        </div>
+
+        <div class="game-board" id="gameBoard">
+          <button class="cell" data-index="0"></button>
+          <button class="cell" data-index="1"></button>
+          <button class="cell" data-index="2"></button>
+          <button class="cell" data-index="3"></button>
+          <button class="cell" data-index="4"></button>
+          <button class="cell" data-index="5"></button>
+          <button class="cell" data-index="6"></button>
+          <button class="cell" data-index="7"></button>
+          <button class="cell" data-index="8"></button>
+        </div>
+
+        <div class="game-status" id="gameStatus"></div>
+
+        <div class="score-board">
+          <div class="score x">
+            <div class="score-label">Player X</div>
+            <div class="score-value" id="scoreX">0</div>
+          </div>
+          <div class="score tie">
+            <div class="score-label">Draws</div>
+            <div class="score-value" id="scoreTie">0</div>
+          </div>
+          <div class="score o">
+            <div class="score-label">Player O</div>
+            <div class="score-value" id="scoreO">0</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="btn btn-outline" id="resetScoreBtn">
+            Reset Score
+          </button>
+          <button class="btn btn-primary" id="resetBtn">Main Menu</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
