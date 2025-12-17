@@ -55,11 +55,14 @@ function handleCellClick(index) {
 
   // If it's vs Computer and still active, trigger computer move
   if (gameActive && isVsComputer && currentPlayer === "O") {
+    currentPlayerDisplay.textContent = "Computer is Thinking...";
+    currentPlayerDisplay.style.color = "#888";
     setTimeout(computerMove, 600);
   }
 }
 
 function makeMove(index) {
+  document.getElementById("clickSound").play();
   board[index] = currentPlayer;
   updateCell(index);
 
@@ -125,6 +128,9 @@ function highlightWinningCells() {
 }
 
 function endGame(message) {
+  if (!message.includes("Tie")) {
+    document.getElementById("winSound").play();
+  }
   gameActive = false;
   gameStatus.textContent = message;
   gameStatus.style.color = "#fff";
